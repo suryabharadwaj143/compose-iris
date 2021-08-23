@@ -18,18 +18,30 @@ app.add_event_handler("startup", init_model)
 
 # class which is expected in the payload while training
 class TrainIn(BaseModel):
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
-    flower_class: str
+
+    feature_names:float 
+    malic_acid:float
+    ash:float
+    alcalinity_of_ash:float
+    magnesium:float
+    total_phenols:float
+    flavanoids:float
+    nonflavanoid_phenols:float
+    proanthocyanins:float
+    color_intensity:float
+    proline:float
+    hue:float
+    proline:float
+    od280_od315_of_diluted_wines:float
+    proline:float
+    wine_class:str
 
 
 # Route definitions
-@app.get("/ping")
+@app.get("/Wine")
 # Healthcheck route to ensure that the API is up and running
 def ping():
-    return {"ping": "pong"}
+    return {"Wine": "This is a Wine Dataset"}
 
 
 @app.post("/train", status_code=200)
